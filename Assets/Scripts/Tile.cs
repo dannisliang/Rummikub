@@ -5,7 +5,7 @@ public class Tile : MonoBehaviour
     private TileValue tileValue;
     private Vector3? destination;
     private const float distLimit = 0.01f;
-    private const float speed = 1f;
+    private const float speed = 2f;
 
     private void Update()
     {

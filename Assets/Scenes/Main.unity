@@ -292,3 +292,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3184b41c2a6f6c046aabe462f525203c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  supportTilePrefab: {fileID: 3807273376800080714, guid: d7017460fae6bf94eac634096d3ce90b,
+    type: 3}

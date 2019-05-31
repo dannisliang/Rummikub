@@ -26,6 +26,24 @@ public class TileManager : MonoBehaviour
             GameObject go = Instantiate(tilePrefab, Vector3.zero, Quaternion.identity);
             TextMesh tm = go.GetComponentInChildren<TextMesh>();
             tm.text = tv.value.ToString();
+            switch (tv.color)
+            {
+                case TileValue.TileColor.Black:
+                    tm.color = Color.black;
+                    break;
+
+                case TileValue.TileColor.Blue:
+                    tm.color = Color.blue;
+                    break;
+
+                case TileValue.TileColor.Red:
+                    tm.color = Color.red;
+                    break;
+
+                case TileValue.TileColor.Yellow:
+                    tm.color = Color.yellow;
+                    break;
+            }
             support.AddTile(go.GetComponent<Tile>());
         }
     }
