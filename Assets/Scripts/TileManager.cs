@@ -8,6 +8,8 @@ public class TileManager : MonoBehaviour
     [SerializeField]
     private Support support;
 
+    public static int currLayerId = 1;
+
     private List<TileValue> tiles;
 
     private void Start()
