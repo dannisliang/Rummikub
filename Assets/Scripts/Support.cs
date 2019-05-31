@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class Support : MonoBehaviour
 {
     private Tile[,] supportTiles;
-    private SpriteRenderer sr;
 
     // Support size: 2*20 + offset of 10px on each side
     private const float tileWidth = 0.71f;
@@ -12,7 +10,6 @@ public class Support : MonoBehaviour
 
     private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
         supportTiles = new Tile[2,20];
         for (int i = 0; i < 2; i++)
             for (int y = 0; y < 20; y++)
