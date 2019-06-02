@@ -11,6 +11,10 @@ public class Tile : MonoBehaviour
     private bool followMouse;
     private SpriteRenderer sr;
     private MeshRenderer childMr;
+    private Support support;
+
+    public void SetSupport(Support newSupport)
+        => support = newSupport;
 
     private void Start()
     {
@@ -31,19 +35,26 @@ public class Tile : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void SetOnTopLayer()
     {
-        followMouse = true;
         sr.sortingOrder = TileManager.currLayerId;
         childMr.sortingOrder = TileManager.currLayerId;
         TileManager.currLayerId++;
     }
 
-    private void OnMouseUp()
+    public void PressTile()
     {
+        followMouse = true;
+        SetOnTopLayer();
+        support.ResetHover();
+    }
+
+    public void ReleaseTile()
+    {
+        support.MoveTile(this);
         followMouse = false;
     }
 
-    public void SetDestination(Vector3 dest)
+    public void SetDestination(Vector3 dest) // The tile save it position on the support
         => destination = dest;
 }
